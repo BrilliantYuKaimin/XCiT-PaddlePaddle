@@ -59,7 +59,8 @@ python tools/train.py -c xcit_nano_12_p8_224_dist.yml
 评估我训练出的模型：
 
 ```bash
-python tools/eval.py -c xcit_nano_12_p8_224_dist.yml
+python tools/eval.py -c xcit_nano_12_p8_224_dist.yml \
+                     -o Global.pretrained_model=best_model
 ```
 
 在前面提到的压缩过的ImageNet-1k验证集上的结果是
