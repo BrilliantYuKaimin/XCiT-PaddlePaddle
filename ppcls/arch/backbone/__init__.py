@@ -63,7 +63,7 @@ from ppcls.arch.backbone.model_zoo.cspnet import CSPDarkNet53
 from ppcls.arch.backbone.variant_models.resnet_variant import ResNet50_last_stage_stride1
 from ppcls.arch.backbone.variant_models.vgg_variant import VGG19Sigmoid
 
-from ppcls.arch.backbone.model_zoo.xcit import XCiT_nano_12_p8
+from ppcls.arch.backbone.model_zoo.xcit import XCiT_nano_12_p16, XCiT_tiny_12_p16, XCiT_small_12_p16, XCiT_tiny_24_p16, XCiT_small_24_p16, XCiT_medium_24_p16, XCiT_large_24_p16, XCiT_nano_12_p8, XCiT_tiny_12_p8, XCiT_small_12_p8, XCiT_tiny_24_p8, XCiT_small_24_p8, XCiT_medium_24_p8, XCiT_large_24_p8
 
 def get_apis():
     current_func = sys._getframe().f_code.co_name
