@@ -389,15 +389,102 @@ class XCiT(nn.Layer):
     def forward(self, x):
         x = self.forward_features(x)
         x = self.head(x)
-        # if self.training:
-        #     return x, x
-        # else:
-        #     return x
         return x
+
+
+def XCiT_nano_12_p16(pretrained=False, **kwargs):
+    model = XCiT(
+        patch_size=16, embed_dim=128, depth=12, num_heads=4, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(nn.LayerNorm, epsilon=1e-6), eta=1.0, tokens_norm=False, **kwargs)
+    return model
+
+
+def XCiT_tiny_12_p16(pretrained=False, **kwargs):
+    model = XCiT(
+        patch_size=16, embed_dim=192, depth=12, num_heads=4, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(nn.LayerNorm, epsilon=1e-6), eta=1.0, tokens_norm=True, **kwargs)
+    return model
+
+
+def XCiT_small_12_p16(pretrained=False, **kwargs):
+    model = XCiT(
+        patch_size=16, embed_dim=384, depth=12, num_heads=8, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(nn.LayerNorm, epsilon=1e-6), eta=1.0, tokens_norm=True, **kwargs)
+    return model
+
+
+def XCiT_tiny_24_p16(pretrained=False, **kwargs):
+    model = XCiT(
+        patch_size=16, embed_dim=192, depth=24, num_heads=4, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(nn.LayerNorm, epsilon=1e-6), eta=1e-5, tokens_norm=True, **kwargs)
+    return model
+
+
+def XCiT_small_24_p16(pretrained=False, **kwargs):
+    model = XCiT(
+        patch_size=16, embed_dim=384, depth=24, num_heads=8, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(nn.LayerNorm, epsilon=1e-6), eta=1e-5, tokens_norm=True, **kwargs)
+    return model
+
+
+def XCiT_medium_24_p16(pretrained=False, **kwargs):
+    model = XCiT(
+        patch_size=16, embed_dim=512, depth=24, num_heads=8, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(nn.LayerNorm, epsilon=1e-6), eta=1e-5, tokens_norm=True, **kwargs)
+    return model
+
+
+def XCiT_large_24_p16(pretrained=False, **kwargs):
+    model = XCiT(
+        patch_size=16, embed_dim=768, depth=24, num_heads=16, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(nn.LayerNorm, epsilon=1e-6), eta=1e-5, tokens_norm=True, **kwargs)
+    return model
 
 
 def XCiT_nano_12_p8(pretrained=False, **kwargs):
     model = XCiT(
         patch_size=8, embed_dim=128, depth=12, num_heads=4, mlp_ratio=4, qkv_bias=True,
         norm_layer=partial(nn.LayerNorm, epsilon=1e-6), eta=1.0, tokens_norm=False, **kwargs)
+    return model
+
+
+def XCiT_tiny_12_p8(pretrained=False, **kwargs):
+    model = XCiT(
+        patch_size=8, embed_dim=192, depth=12, num_heads=4, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(nn.LayerNorm, epsilon=1e-6), eta=1.0, tokens_norm=True, **kwargs)
+    return model
+
+
+def XCiT_small_12_p8(pretrained=False, **kwargs):
+    model = XCiT(
+        patch_size=8, embed_dim=384, depth=12, num_heads=8, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(nn.LayerNorm, epsilon=1e-6), eta=1.0, tokens_norm=True, **kwargs)
+    return model
+
+
+def XCiT_tiny_24_p8(pretrained=False, **kwargs):
+    model = XCiT(
+        patch_size=8, embed_dim=192, depth=24, num_heads=4, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(nn.LayerNorm, epsilon=1e-6), eta=1e-5, tokens_norm=True, **kwargs)
+    return model
+
+
+def XCiT_small_24_p8(pretrained=False, **kwargs):
+    model = XCiT(
+        patch_size=8, embed_dim=384, depth=24, num_heads=8, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(nn.LayerNorm, epsilon=1e-6), eta=1e-5, tokens_norm=True, **kwargs)
+    return model
+
+
+def XCiT_medium_24_p8(pretrained=False, **kwargs):
+    model = XCiT(
+        patch_size=8, embed_dim=512, depth=24, num_heads=8, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(nn.LayerNorm, epsilon=1e-6), eta=1e-5, tokens_norm=True, **kwargs)
+    return model
+
+
+def XCiT_large_24_p8(pretrained=False, **kwargs):
+    model = XCiT(
+        patch_size=8, embed_dim=768, depth=24, num_heads=16, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(nn.LayerNorm, epsilon=1e-6), eta=1e-5, tokens_norm=True, **kwargs)
     return model
