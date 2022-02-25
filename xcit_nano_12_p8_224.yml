@@ -22,7 +22,7 @@ Loss:
   Train:
     - CELoss:
         epsilon: 0.1
-        weight: 0.5
+        weight: 1.0
   Eval:
     - CELoss:
         weight: 1.0
